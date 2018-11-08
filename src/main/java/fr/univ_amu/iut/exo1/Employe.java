@@ -10,7 +10,7 @@ public class Employe {
     public String NumSecu;
     public String NomEmp;
     public String PrenomEmp;
-    public String Echelon;
+    public int Echelon;
     public LocalDate DateNaissance;
     public LocalDate DateEmbauche;
 
@@ -18,7 +18,8 @@ public class Employe {
     public double NbHeurres;
     public double Base;
 
-    public Employe(String numSecu, String nomEmp, String prenomEmp, String echelon, LocalDate dateNaissance, LocalDate dateEmbauche, double nbHeurres, double base, int numEmp) {
+    public Employe(){}
+    public Employe(String numSecu, String nomEmp, String prenomEmp, int echelon, LocalDate dateNaissance, LocalDate dateEmbauche, double nbHeurres, double base, int numEmp) {
         NumSecu = numSecu;
         NomEmp = nomEmp;
         PrenomEmp = prenomEmp;
@@ -48,7 +49,7 @@ public class Employe {
         return PrenomEmp;
     }
 
-    public String getEchelon() {
+    public int getEchelon() {
         return Echelon;
     }
 
@@ -70,7 +71,7 @@ public class Employe {
 
     public double getSalaireBrut()
     {
-        return this.getBase() * this.getNbHeurres();
+        return this.getBase() * this.getNbHeurres() + 100;
     }
 
     public double getSalaireNet()
